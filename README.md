@@ -19,3 +19,16 @@ git clone <url>
 ##Subir o repositório
 
   git push origin master
+	
+
+
+	GIT CLONE
+##Clonando um repositório
+
+git clone <url>
+	
+##Clonando o repositório de github 
+
+	git clone <url> git-demo
+	
+	
