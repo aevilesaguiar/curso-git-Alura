@@ -130,5 +130,15 @@ que será incluído entre aspas. </p>
 <li>git reset</li>
 <li>git revert</li>
 </ul>
+
+<h2>Guardando o código para depois</h2>
+
+<p>git stash :No Git, existe um conceito denominado Stash, e por meio de git stash conseguimos salvar todas as alterações, no caso, somente o arquivo index.html, para um local temporário, sem necessidade de um commit ou de se gerar um commit para isto.Se, após git stash executarmos git stash list, teremos uma lista de tudo que estiver salvo nestas condições. Queremos trazer os dados armazenados pelo git stash ao diretório de trabalho. Há duas opções: executarmos git stash list, e em seguida passarmos o número da stash em git stash apply 0, aplicaremos estas modificações, porém elas continuarão na stash. Para a remoção, poderemos usar git stash drop.  </p>
+<p>No caso de querermos fazer ambas as ações ao mesmo tempo, ou seja, pegar a última alteração adicionada à stash, e já removê-la de lá, utilizaremos git stash pop que, ao ser executado, realiza o merge com as modificações que já temos e aplica aquelas que já estavam salvas lá</p>
+<p>Em que momento o stash parece útil?Quando precisamos parar o desenvolvimento de algo no meio para trabalhar em outra coisa </p>
+<p>Resumidamente, para que serve o comando git checkout?Para deixar o nosso código em determinado estado</p>
+<hr>
+
+
 </body>
 </html>
