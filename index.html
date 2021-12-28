@@ -8,22 +8,95 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    
-    <h1>Chegou a hora de você pôr em prática o que foi visto na aula. Para isso, execute os passos listados abaixo.</h1>
-<hr><ul>
-<li>1) No terminal (ou Git Bash, no Windows) navegue até a pasta recém criada (utilize o comando cd para navegar entre pastas);</li>
-<li>2) Execute o comando git add index.html para marcar o arquivo para ser salvo (commitado);</li>
-<li>3) Execute git status e confira que o arquivo agora mudou de estado e está pronto para ser salvo (commitado);</li>
-<li>4) Após adicionar, execute o comando git commit -m "Criando arquivo index.html com lista de cursos". Sinta-se à vontade para alterar a mensagem de commit, se desejar;</li>
-<li>5) Altere o arquivo index.html. Adicione o acento em "Integração Continua", por exemplo;</li>
-<li>6) Adicione o arquivo para ser salvo, com git add .;</li>
-<li>7) Execute o comando git commit -m "Acento adicionado no curso de Integração Contínua". Sinta-se à vontade para alterar a mensagem de commit, se desejar;</li>
-<li>8) Execute o comando git log e analise a sua saída. Execute também git log --oneline, git log -p e outras alternativas que quiser testar;</li>
-<li>9) Crie um arquivo vazio com o nome que quiser, por exemplo, ide-config;</li>
-<li>10) Crie o arquivo .gitignore e adicione uma linha com o nome do arquivo recém-criado (ide-config, no exemplo acima);</li>
-<li>11) Execute git status e verifique que o arquivo ide-config não está na lista para ser adicionado;</li>
-<li>12) Adicione (com git add .gitignore) e realize o commit (com git commit -m "Adicionando .gitignore") o arquivo .gitignore.</li>
+
+<h1>O que é Git?</h1>
+<p>Git é um controle de Versão</p>
+<p>Existem diversos outros sistemas de versão. Segue algumas alternativas:</p>
+<ul>
+    <li>CVS</li>
+<li>SVN</li>
+<li>Mercurial</li>
+</ul>
+<p>O git é o mais utilizado entre eles atualmente por conta de algumas características, como por exemplo permitir uma cópia do projeto,criar um repositório do projeto em sua máquina, para que seja possivel trabalhar em cima dela e se houver necessidade também enviar para outro repositório.</p>
+
+<hr>
+<h2>O projeto do Curso será uma pagina html simples</h2>
+
+<p>Para inicializar um repositorio utilizamos o comando: <b>git init</b></p>
+
+<p>Todas as alterações que forem realizadas nos arquivos dentro deste repositório poderão ser mostradas  pelo o Git, com indicações que foi
+    modificado, quem modificou , quando foi modificado e assim por diante.
+</p>
+
+<p>Um comando que mostra o estado do repositório, ou seja , quais arquivos foram alterados , ou não é o <b>git status</b></p>
+ 
+<hr>
+<p>
+    Neste tópco aprendemos:
+</p>
+<ul>
+    <li>O que são (e para que servem) sistemas de controle de versões e como eles podem ajudar o nosso fluxo de desenvolvimento,
+        nos ajudando a manter um histórico de alterações,controle sobre cada alteração no código
+    </li>
+    <li>O que é o Git e como instalá-lo</li>
+    <li>comando git init nós conseguimos criar um repositório Git;</li>
+    <li>Como analisar o estado do nosso repositório através do comando git status</li>
 
 </ul>
+
+<hr>
+<h2>Iniciando os trabalhos</h2>
+<p>Já criamos nosso primeiro repositório, então, se executarmos git status dentro da pasta em que trabalhamos anteriormente, veremos que trata-se de um repositório Git, porém, seu arquivo ainda não está sendo monitorado, ou seja, ele não está salvo no histórico do Git. Para salvarmos uma alteração, ou um arquivo nele, precisaremos que ele monitore o arquivo, e suas mudanças.</p>
+<p>Utilizaremos o comando <b>git add "nome do arquivo"</b> no caso de salvar apenas um arquivo, se houvessem mais arquivos não haveria a necessidade de colocar o nome apenas <b>git add .</b> para que todos os arquivos fossem monitorados.</p>
+<p>Queremos Queremos salvar as alterações, e o que poderemos entender como sendo um check point para indicar que houve mudança, seria o commit, que precisa ter modificações, que já adicionamos, mas também precisa ter uma mensagem, o que criaremos agora. Por já termos adicionado as modificações a serem enviadas, executaremos simplesmente <b>git commit -m "Criando um arquivo"</b> em que o parâmetro -m serve para passarmos uma mensagem de commit
+que será incluído entre aspas. </p>
+
+<hr>
+<h2>Saber mais sobre o git status</h2>
+<p>Ao executar o comando git status, recebemos algumas informações que talvez não estejam tão claras, principalmente quando nos deparamos com termos como HEAD, working tree, index, etc.</p>
+<p>Apenas para esclarecer um pouco, visto que entenderemos melhor o funcionamento do Git durante o treinamento, seguem algumas definições interessantes:</p>
+
+<ul>
+<li>HEAD: Estado atual do nosso código, ou seja, onde o Git os colocou</li>
+<li>Working tree: Local onde os arquivos realmente estão sendo armazenados e editados</li>
+<li>index: Local onde o Git armazena o que será commitado, ou seja, o local entre a working tree e o repositório Git em si.</li>
+</ul>
+<hr>
+<h2>Verificar o histórico de alterações:</h2>
+<p>O comando que poderemos utilizar para isto é <b> git log</b>, que nos mostrará diversas informações, sendo o primeiro deles um hash do commit, uma identificação única de cada commit, isto é, não existem dois commits com o mesmo hash. </p>
+
+<h2>Primeira Configuração do git</h2>
+<ul>
+<li>git config --local user.name "Nome da pessoa"</li>
+<li>git config --local user.email "seu@email.aqui"</li>
+</ul>
+
+<hr>
+<h2>Ignorando arquivos</h2>
+<p>Pode acontecer de não querermos que determinado arquivo seja monitorado, como no caso de um arquivo de configurações da IDE. Como poderemos fazer para que o Git o ignore?</p>
+<p>Existe um arquivo especial do Git, chamado .gitignore, e todas as linhas que estiverem nele serão lidos e ignorados pelo Git. Se temos um arquivo denominado ide-config que queremos que seja ignorado, por exemplo, basta o incluirmos em .gitignore, digitando ide-config simplesmente. Da mesma forma, se tivéssemos uma pasta ide, incluiríamos ide/, em uma nova linha.
+    O nome do arquivo é <b> git add .gitignore</b>.
+</p>
+<hr>
+
+<h2>Repositório Remoto</h2>
+
+<p>Se executarmos o comando git remote, teoricamente, nada acontece. Mas na verdade, todos os repositórios remotos que o repositório local conhece são listados, que até o momento é nenhum. Portanto, adicionaremos um, com git remote add local C:/Users/ALURA/Documents/git-e-github/servidor, e para quantos repositórios remotos quisermos, poderemos dar algum nome, no caso, local, também incluiremos um caminho, que poderá ser uma URL de um servidor pela internet, um endereço na rede, inclusive de outro computador, qualquer endereço válido para um repositório Git. Neste caso, será uma pasta no próprio servidor.</p>
+<p>Depois que pressionamos "Enter", aparentemente nada acontece, e se usarmos o comando git remote, o retorno será local. Se quisermos garantir que o endereço esteja correto, poderemos executar git remote -v, que faz com que o endereço de local seja exibido. Além disso, é indicado que os dados deste caminho serão buscados (fetch), e enviados para este mesmo caminho (push).</p>
+<h2>Clonar repositório</h2>
+<p>Para clonar um repositório utilizamos o comando <b>git clone "url"</b></p>
+<p>Além de adicionar repositórios remotos para sincronizar os dados, vimos que o git clone traz um repositório remoto para o nosso computador, criando um repositório loca</p>
+
+<h2> Enviar as alterações para o repositório remoto</h2>
+<p>git push [repositorio] master</p>
+<p>Desta forma, nós enviamos as alterações em nosso branch master (falaremos mais sobre branches já já) para o repositório remoto. Basta substituir [repositorio] pelo nome que demos ao repositório ao adicioná-lo. Já para trazer os dados que estiverem no repositório remoto, podemos utilizar o git pull [repositorio] master.</p>
+<hr>
+<h2>Trabalhando em Equipe</h2>
+<p>Branches ("ramos") são utilizados para desenvolver funcionalidades isoladas umas das outras. A branch master é a branch "padrão" quando você cria um repositório.
+
+    É interessante separar o desenvolvimento de funcionalidades em branches diferentes, para que as mudanças no código para uma não influencie no funcionamento de outra.</p>
+<p>Usando o Branch.Então, informaremos ao nosso controle de versões que, a partir de um determinado commit, um dos usuários alterará apenas um trecho específico, enquanto o outro usuário informará do seu trecho em desenvolvimento, também. </p>
+<p>Estas ramificações do trabalho são uma das formas de com que podemos trabalhar, em relação aos branches do Git. Por padrão, se executarmos git branch no Git Bash, teremos um único branch, master, e é exatamente isto que o Git Bash nos mostra ao fim da linha. No entanto, poderemos criar outros. No caso de trabalharmos somente no título, por exemplo, utilizaremos o comando git branch titulo, que criará este branch, embora tenhamos que mudar para ela manualmente, com git checkout titulo.</p>
+
 </body>
 </html>
