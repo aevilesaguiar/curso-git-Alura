@@ -151,8 +151,27 @@ que será incluído entre aspas. </p>
     <li>Que o comando git stash drop <numero> remove determinado item da stash;</li>
     <li>Que o comando git stash pop aplica e remove a última alteração que foi adicionada na stash;
     </li>
-    <li></li>
+    <li>Que o git checkout serve para deixar a cópia do código da nossa aplicação no estado que desejarmos:
+        git checkout <branch> deixa o código no estado de uma branch com o nome <branch>;
+        git checkout <hash> deixa o código no estado do commit com o hash <hash>.</li>
 </ul>
 
+
+<hr>
+<h2>Vendo alterações</h2>
+<p>git diff , é necessário incluir o git diff e na proxima linha git diff e o hash</p>
+<p>Com o comando git diff, nós vimos que é possível visualizarmos as mudanças realizadas em determinado código. Podemos ver as diferenças entre commits, branches, etc.
+Como o git diff exibe as mudanças no código? </p>
+<p>+ linha adicionada
+    - linha removida
+    - linha modificada (versão antiga)
+    + linha modificada (nova versão)
+<br>
+O sinal de subtração (-) antes da linha indica que ela não está mais presente no arquivo. Já o sinal de adição (+) mostra que é uma linha nova. Alterações são representadas por uma remoção e uma adição de linha.
+</p>
+<hr>
+<h2>Tags e Releases</h2>
+<p>Podemos utilizar tags no git, para identificar um marco, um ponto que não muda mais na aplicação </p>
+<p> git tag -a v0.1.1.0-m "Lançando a primeira versão beta do curso"</p>
 </body>
 </html>
